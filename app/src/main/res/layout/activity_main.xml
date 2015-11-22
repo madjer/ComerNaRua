@@ -14,7 +14,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="380dp" />
+        android:layout_marginBottom="380dp"/>
 
     <ListView
         android:layout_width="fill_parent"
