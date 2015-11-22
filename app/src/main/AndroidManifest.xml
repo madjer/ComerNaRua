@@ -20,6 +20,8 @@
             android:label="@string/title_activity_activity_foodtruck_detail"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".foodTruckDetail" >
+        </activity>
     </application>
 
 </manifest>
