@@ -59,12 +59,12 @@ public class AdapterListView extends BaseAdapter {
         // e define os valores nos itens.
         ItemListView item = itens.get(position);
         itemHolder.itemTitle.setText(item.getTitle());
-        itemHolder.imgIcon.setImageResource(R.mipmap.ic_launcher);
+        itemHolder.imgIcon.setImageResource(item.getIconeRid());
         itemHolder.itemDesc.setText(item.getDesc());
         if (item.getOpen()) {
-            itemHolder.imgLegenda.setImageResource(android.R.drawable.button_onoff_indicator_on);
+            itemHolder.imgLegenda.setImageResource(R.drawable.open);
         } else {
-            itemHolder.imgLegenda.setImageResource(android.R.drawable.button_onoff_indicator_off);
+            itemHolder.imgLegenda.setImageResource(R.drawable.close);
         }
 
         //retorna a view com as informações
