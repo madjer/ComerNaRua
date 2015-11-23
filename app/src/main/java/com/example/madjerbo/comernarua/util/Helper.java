@@ -2,5 +2,5 @@ package com.example.madjerbo.comernarua.util;
 
 public class Helper {
 
-    public static final String host = "http://192.168.25.8:3000";
+    public static final String host = "https://comer-na-rua-madjer1.c9.io";
 }
