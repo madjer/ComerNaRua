@@ -1,4 +1,4 @@
-package com.example.madjerbo.comernarua.Adapters;
+package com.example.madjerbo.comernarua.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
