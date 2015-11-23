@@ -7,6 +7,7 @@ public class Foodtruck implements Parcelable {
     public String id;
     public String nome;
     public String descricao;
+    public String logo_thumb;
 
     @Override
     public int describeContents() {
@@ -18,5 +19,6 @@ public class Foodtruck implements Parcelable {
         parcel.writeString(id);
         parcel.writeString(nome);
         parcel.writeString(descricao);
+        parcel.writeString(logo_thumb);
     }
 }
