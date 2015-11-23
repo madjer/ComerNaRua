@@ -20,7 +20,7 @@ public class FoodtruckAdapter extends ArrayAdapter<Foodtruck> {
     List<Foodtruck> foodtrucks;
 
     public FoodtruckAdapter(Context context, List<Foodtruck> foodtrucks) {
-        super(context, R.layout.food_truck_item_list, foodtrucks);
+        super(context, R.layout.foodtruck_list_item, foodtrucks);
         this.context = context;
         this.foodtrucks = foodtrucks;
     }
@@ -28,10 +28,12 @@ public class FoodtruckAdapter extends ArrayAdapter<Foodtruck> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.food_truck_item_list, parent, false);
-        Foodtruck foodtruck = foodtrucks.get(position);
+        View view = inflater.inflate(R.layout.foodtruck_list_item, parent, false);
 
-        ((TextView) view.findViewById(R.id.itemTitle)).setText(foodtruck.nome);
+        Foodtruck foodtruck = foodtrucks.get(position);
+        TextView tituloTxt = (TextView) view.findViewById(R.id.itemTitle);
+
+        tituloTxt.setText(foodtruck.nome);
 
         return view;
     }
