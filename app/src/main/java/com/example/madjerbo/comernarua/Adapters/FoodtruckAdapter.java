@@ -45,7 +45,7 @@ public class FoodtruckAdapter extends ArrayAdapter<Foodtruck> {
         Foodtruck foodtruck = foodtrucks.get(position);
         TextView tituloTxt = (TextView) view.findViewById(R.id.itemTitle);
         TextView descricaoTxt = (TextView) view.findViewById(R.id.itemDesc);
-        ImageView imgView = (ImageView) view.findViewById(R.id.imagemview);
+        ImageView logoView = (ImageView) view.findViewById(R.id.logo);
 
         tituloTxt.setText(foodtruck.nome);
         descricaoTxt.setText(foodtruck.descricao);
@@ -54,9 +54,9 @@ public class FoodtruckAdapter extends ArrayAdapter<Foodtruck> {
 
         // Aqui ele faz o cache das imagens da lista pra ir buscar no servidor só uma vez..
         if (storage.getImageLogo(foodtruck.id) == null) {
-            new DownloadImageTask(imgView, foodtruck.id, storage).execute(foodtruck.logo_thumb);
+            new DownloadImageTask(logoView, foodtruck.id, storage).execute(foodtruck.logo_thumb);
         } else {
-            imgView.setImageBitmap(storage.getImageLogo(foodtruck.id));
+            logoView.setImageBitmap(storage.getImageLogo(foodtruck.id));
         }
 
 

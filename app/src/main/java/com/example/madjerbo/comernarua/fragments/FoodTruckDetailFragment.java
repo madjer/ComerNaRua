@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madjerbo.comernarua.R;
 import com.example.madjerbo.comernarua.entities.Foodtruck;
+import com.example.madjerbo.comernarua.util.DownloadImageTask;
+import com.example.madjerbo.comernarua.util.Storage;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -30,9 +33,19 @@ public class FoodTruckDetailFragment extends BaseFragment {
             public void success(Foodtruck foodtruck, Response response) {
                 TextView nomeTxt = (TextView) view.findViewById(R.id.nome);
                 TextView descricaoTxt = (TextView) view.findViewById(R.id.descricao);
+                ImageView logo = (ImageView) view.findViewById(R.id.logo);
 
                 nomeTxt.setText(foodtruck.nome);
                 descricaoTxt.setText(foodtruck.descricao);
+
+                final Storage storage = new Storage(view.getContext());
+
+                // Aqui ele faz o cache das imagens da lista pra ir buscar no servidor só uma vez..
+                if (storage.getImageLogo(foodtruck.id) == null) {
+                    new DownloadImageTask(logo, foodtruck.id, storage).execute(foodtruck.logo_thumb);
+                } else {
+                    logo.setImageBitmap(storage.getImageLogo(foodtruck.id));
+                }
             }
 
             @Override
