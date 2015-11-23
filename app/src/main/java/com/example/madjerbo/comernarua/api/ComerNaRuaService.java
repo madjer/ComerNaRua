@@ -5,11 +5,8 @@ import com.example.madjerbo.comernarua.entities.Foodtruck;
 import java.util.List;
 
 import retrofit.Callback;
-import retrofit.http.Body;
 import retrofit.http.GET;
-import retrofit.http.Header;
 import retrofit.http.Headers;
-import retrofit.http.PUT;
 import retrofit.http.Path;
 
 public interface ComerNaRuaService {
