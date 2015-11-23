@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     android:padding="6dip"
     android:background="@drawable/bg_elchancho"
     android:id="@+id/imageViewLine"
@@ -10,12 +10,13 @@
     android:layout_marginBottom="120dp">
 
     <ImageView
-        android:id="@+id/imagemview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/button_onoff_indicator_on"
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="12dp"
+        android:src="@mipmap/ic_launcher"
         android:layout_marginLeft="0dp"/>
+<<<<<<< HEAD:app/src/main/res/layout/food_truck_item_list.xml
     <ImageView
         android:id="@+id/legenda"
         android:layout_width="wrap_content"
@@ -24,6 +25,16 @@
         android:layout_marginTop="0dp"
         android:layout_marginLeft="340dp"
         />
+=======
+
+    <!--<ImageView-->
+        <!--android:id="@+id/legenda"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@android:drawable/button_onoff_indicator_on"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:layout_marginLeft="340dp" />-->
+>>>>>>> 6bea864753bc5888b379e1339d3d2e16b6c4116b:app/src/main/res/layout/foodtruck_list_item.xml
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +52,6 @@
             android:layout_alignWithParentIfMissing="true"
             android:gravity="center_vertical"
             android:textColor="@color/blank"
-            android:text="Route Name"
             android:textSize="18sp" />
 
         <TextView
@@ -52,7 +62,6 @@
             android:layout_marginTop="20dp"
             android:ellipsize="marquee"
             android:textColor="@color/blank"
-            android:text="descrição descrição descrição descrição descrição descrição descrição descrição"
             android:textSize="15sp"
             android:maxLines="3"/>
     </RelativeLayout>
