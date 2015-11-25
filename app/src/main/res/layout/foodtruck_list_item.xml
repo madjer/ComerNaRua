@@ -16,16 +16,7 @@
         android:layout_marginTop="12dp"
         android:src="@mipmap/ic_launcher"
         android:layout_marginLeft="0dp"/>
-<<<<<<< HEAD:app/src/main/res/layout/food_truck_item_list.xml
-    <ImageView
-        android:id="@+id/legenda"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:src="@android:drawable/button_onoff_indicator_on"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="340dp"
-        />
-=======
+
 
     <!--<ImageView-->
         <!--android:id="@+id/legenda"-->
@@ -34,7 +25,6 @@
         <!--android:src="@android:drawable/button_onoff_indicator_on"-->
         <!--android:layout_marginTop="0dp"-->
         <!--android:layout_marginLeft="340dp" />-->
->>>>>>> 6bea864753bc5888b379e1339d3d2e16b6c4116b:app/src/main/res/layout/foodtruck_list_item.xml
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.example.madjerbo.comernarua.fragments;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,11 @@ import com.example.madjerbo.comernarua.R;
 import com.example.madjerbo.comernarua.entities.Foodtruck;
 import com.example.madjerbo.comernarua.util.DownloadImageTask;
 import com.example.madjerbo.comernarua.util.Storage;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -34,6 +40,7 @@ public class FoodTruckDetailFragment extends BaseFragment {
                 TextView nomeTxt = (TextView) view.findViewById(R.id.nome);
                 TextView descricaoTxt = (TextView) view.findViewById(R.id.descricao);
                 ImageView logo = (ImageView) view.findViewById(R.id.logo);
+                MapView map = (MapView) view.findViewById(R.id.map);
 
                 nomeTxt.setText(foodtruck.nome);
                 descricaoTxt.setText(foodtruck.descricao);
@@ -55,6 +62,11 @@ public class FoodTruckDetailFragment extends BaseFragment {
         });
 
         return view;
+    }
+    public void onMapReady(GoogleMap map) {
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0))
+                .title("Marker"));
     }
 
 }
