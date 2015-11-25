@@ -1,7 +1,6 @@
 package com.example.madjerbo.comernarua.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,8 @@ import com.example.madjerbo.comernarua.util.DownloadImageTask;
 import com.example.madjerbo.comernarua.util.Storage;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -26,7 +26,7 @@ import retrofit.client.Response;
 /**
  * Created by felipeaquino on 22/11/15.
  */
-public class FoodTruckDetailFragment extends BaseFragment {
+public class FoodTruckDetailFragment extends BaseFragment implements OnMapReadyCallback {
 
     public String mTruckId;
 
@@ -34,13 +34,16 @@ public class FoodTruckDetailFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.foodtruck_detail, container, false);
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
         service.foodtruck(mTruckId, new Callback<Foodtruck>() {
             @Override
             public void success(Foodtruck foodtruck, Response response) {
                 TextView nomeTxt = (TextView) view.findViewById(R.id.nome);
                 TextView descricaoTxt = (TextView) view.findViewById(R.id.descricao);
                 ImageView logo = (ImageView) view.findViewById(R.id.logo);
-                MapView map = (MapView) view.findViewById(R.id.map);
 
                 nomeTxt.setText(foodtruck.nome);
                 descricaoTxt.setText(foodtruck.descricao);
@@ -63,6 +66,8 @@ public class FoodTruckDetailFragment extends BaseFragment {
 
         return view;
     }
+
+    @Override
     public void onMapReady(GoogleMap map) {
         map.addMarker(new MarkerOptions()
                 .position(new LatLng(0, 0))
